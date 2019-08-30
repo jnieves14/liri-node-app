@@ -3,8 +3,8 @@ require("dotenv").config();
 var axios = require("axios");
 var fs = require("fs");
 var keys = require("./keys.js");
-// var Spotify = require("note-spotify-api");
-// var spotify = new Spotify(keys.spotify);
+var Spotify = require("node-spotify-api");
+var spotify = new Spotify(keys.spotify);
 var moment = require("moment");
 moment().format();
 
@@ -52,13 +52,10 @@ function showConcertInfo(searchTerm) {
             for (var i = 0; i < response.data.length; i++) {
                 var datetime = response.data[i].datetime;
                 var dateArray = datetime.split("T");
-                
-
-                console.log("\n-------------CONCERT INFO-------------");
-                fs.appendFileSync("log.txt", "\n-------------CONCERT INFO-------------");
 
 
                 var concertInfo = 
+                    "\n-------------CONCERT INFO-------------" +
                     "\nName of Venue: " + response.data[i].venue.name +
                     "\nVenue Location: " + response.data[i].venue.city + "," + response.data[i].venue.region +
                     "\nDate of the Event: " + moment(dateArray[0], "MM-DD-YYYY");
@@ -66,6 +63,8 @@ function showConcertInfo(searchTerm) {
                 console.log(concertInfo);
                 fs.appendFileSync("log.txt", concertInfo);
             
+
+
                 // console.log(i);
                 // fs.appendFileSync("log.txt", i+"\n");
 
