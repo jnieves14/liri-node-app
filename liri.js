@@ -58,8 +58,8 @@ function showConcertInfo(searchTerm) {
                     "\n-------------CONCERT INFO-------------" +
                     "\nName of Venue: " + response.data[i].venue.name +
                     "\nVenue Location: " + response.data[i].venue.city + "," + response.data[i].venue.region +
-                    "\nDate of the Event: " + moment(dateArray[0], "MM-DD-YYYY");
-                    // "\nDate of the Event: " + response.data[i].datetime;
+                    // "\nDate of the Event: " + moment(dateArray[0], "MM-DD-YYYY");
+                    "\nDate of the Event: " + moment(dateArray[0]).format("MM-DD-YYYY");
                 console.log(concertInfo);
                 fs.appendFileSync("log.txt", concertInfo);
             
