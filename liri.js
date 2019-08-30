@@ -37,7 +37,7 @@ function userSearch(searchType, searchTerm) {
             }
             break;
         case "do-what-it-says":
-            showRandomTxtInfo();
+            showRandomTxtInfo(searchTerm);
             break;
         default: 
             console.log("You have entered an incorrect search type. Please choose from one of the following: \nconcert-this \nspotify-this-song \nmovie-this \ndo-what-it-says");
@@ -64,7 +64,7 @@ function showConcertInfo(searchTerm) {
                 fs.appendFileSync("log.txt", concertInfo);
             
 
-
+                // ORIGINAL CODE
                 // console.log(i);
                 // fs.appendFileSync("log.txt", i+"\n");
 
@@ -133,11 +133,14 @@ function showMovieInfo(searchTerm) {
 // DEFAULT SEARCH WITH PARAMETERS FROM random.txt
 function showRandomTxtInfo(searchTerm) {
     fs.readFile("random.txt", "utf8", function(err, data) {
+        console.log("\n-------------DO WHAT IT SAYS-------------");
+                fs.appendFileSync("log.txt", "\n-------------DO WHAT IT SAYS-------------");
+
         if (err) {
             return console.log(err);
         }else {
-            var dataArray = data.split(",");
-            showSongInfo(dataArray[0], dataArray[1]);
+            var data = data.split(",");
+            showSongInfo(data[1]);
         }
     })
 }
