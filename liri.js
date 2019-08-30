@@ -130,5 +130,14 @@ function showMovieInfo(searchTerm) {
     })
 }
 
-
 // DEFAULT SEARCH WITH PARAMETERS FROM random.txt
+function showRandomTxtInfo(searchTerm) {
+    fs.readFile("random.txt", "utf8", function(err, data) {
+        if (err) {
+            return console.log(err);
+        }else {
+            var dataArray = data.split(",");
+            showSongInfo(dataArray[0], dataArray[1]);
+        }
+    })
+}
