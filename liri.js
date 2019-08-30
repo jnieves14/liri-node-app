@@ -6,7 +6,7 @@ var keys = require("./keys.js");
 // var Spotify = require("note-spotify-api");
 // var spotify = new Spotify(keys.spotify);
 var moment = require("moment");
-moment().format("MMM Do YY");
+moment().format();
 
 var searchType = process.argv[2];
 var searchTerm = process.argv[3];
@@ -54,14 +54,14 @@ function showConcertInfo(searchTerm) {
                 var dateArray = datetime.split("T");
                 
 
-                console.log("-------------CONCERT INFO-------------");
-                fs.appendFileSync("log.txt", "-------------CONCERT INFO-------------");
+                console.log("\n-------------CONCERT INFO-------------");
+                fs.appendFileSync("log.txt", "\n-------------CONCERT INFO-------------");
 
 
                 var concertInfo = 
                     "\nName of Venue: " + response.data[i].venue.name +
                     "\nVenue Location: " + response.data[i].venue.city + "," + response.data[i].venue.region +
-                    "\nDate of the Event: " + moment(dateArray[0], "MMM Do YY");
+                    "\nDate of the Event: " + moment(dateArray[0], "MM-DD-YYYY");
                     // "\nDate of the Event: " + response.data[i].datetime;
                 console.log(concertInfo);
                 fs.appendFileSync("log.txt", concertInfo);
