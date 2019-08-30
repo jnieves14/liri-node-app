@@ -91,8 +91,8 @@ function showSongInfo(searchTerm) {
     }).then(function(response) {
         for (var i = 0; i < 5; i++) {
             
-            console.log("-------------CONCERT INFO-------------");
-                fs.appendFileSync("log.txt", "-------------CONCERT INFO-------------");
+            console.log("-------------SPOTIFY INFO-------------");
+                fs.appendFileSync("log.txt", "-------------SPOTIFY INFO-------------");
 
             var spotifyInfo = 
                 "\nArtist(s): " + response.tracks.items[i].artists[0].name +
@@ -100,6 +100,7 @@ function showSongInfo(searchTerm) {
                 "\nAlbum Name: " + response.tracks.items[i].album.name +
                 "\nPreview Link: " + response.tracks.items[i].preview_url;
                 console.log(spotifyInfo);
+                fs.appendFileSync("log.txt", spotifyInfo);
         }
     }).catch(function(err) {
         console.log(err);
