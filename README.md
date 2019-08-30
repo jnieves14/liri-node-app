@@ -4,6 +4,7 @@
 " LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and Recognition Interface, LIRI is a Language Interpretation and Recognition Interface. LIRI will be a command line node app that takes in parameters and gives you back data."
 
 ## Link
+[my website](https://jnieves14.github.io/liri-node-app/)
 
 ## Preview
 You can use commands like:
@@ -13,8 +14,7 @@ You can use commands like:
 * do-what-it-says: try it!
 
 Example of what the default 'concert-this' command in Terminal shows
-![Image of Terminal]
-(https://octodex.github.com/images/yaktocat.png)
+![Image of Terminal](https://github.com/jnieves14/liri-node-app/blob/master/example.jpg)
 
 
 ## Key Topics
