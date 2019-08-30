@@ -33,7 +33,7 @@ function userSearch(searchType, searchTerm) {
             if (searchTerm) {
             showMovieInfo(searchTerm);
             }else {
-                showMovieInfo("The Nun");
+                showMovieInfo("Mr. Nobody");
             }
             break;
         case "do-what-it-says":
@@ -91,8 +91,8 @@ function showSongInfo(searchTerm) {
     }).then(function(response) {
         for (var i = 0; i < 5; i++) {
             
-            console.log("-------------SPOTIFY INFO-------------");
-                fs.appendFileSync("log.txt", "-------------SPOTIFY INFO-------------");
+            console.log("\n-------------SPOTIFY INFO-------------");
+                fs.appendFileSync("log.txt", "\n-------------SPOTIFY INFO-------------");
 
             var spotifyInfo = 
                 "\nArtist(s): " + response.tracks.items[i].artists[0].name +
@@ -109,8 +109,26 @@ function showSongInfo(searchTerm) {
 }
 
 // OMDB - USED FOR MOVIE INFO
-// function showMovieInfo(searchTerm) {
+function showMovieInfo(searchTerm) {
+    axios.get("https://www.omdbapi.com/?t=" + searchTerm + "&y=&plot=short&apikey=trilogy")
+    .then(function(response) {
+        console.log("\n------------- MOVIE INFO-------------");
+        fs.appendFileSync("log.txt", "\n-------------MOVIE INFO-------------");
 
-// }
+        var movieInfo = 
+            "\nTitle of the Movie: " + response.data.Title +
+            "\nYear the Movie Came out: " + response.data.Year +
+            "\nIMDB Rating of the Movie: " + response.data.Ratings[0].Value +
+            "\nRotten Tomatoes Rating of the Movie: " + response.data.Ratings[1].Value +
+            "\nCountry Where the Movie was Produced: " + response.data.Country +
+            "\nLanguage of the Movie: " + response.data.Language +
+            "\nPlot of the Movie: " + response.data.Plot +
+            "\nActors of the Movie: " + response.data.Actors;                console.log(movieInfo);
+            fs.appendFileSync("log.txt", movieInfo);
+    }).catch(function(err) {
+        console.log(err);
+    })
+}
+
 
 // DEFAULT SEARCH WITH PARAMETERS FROM random.txt
