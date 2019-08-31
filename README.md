@@ -5,14 +5,15 @@
 
 ## Instructions
 liri.js can take in one of the following commands:
-* concert-this
+* concert-this 
 * spotify-this-song
 * movie-this
 * do-what-it-says
 <p>
 If using one of the first three commands, users may add a search term for example:
 <p>
-* concert-this *artist name*
+
+* concert-this _artist name_ 
 * spotify-this-song *song name*
 * movie-this *movie name*
 Type do-what-it-says with no search term tp see what happens!
