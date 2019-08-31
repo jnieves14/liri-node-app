@@ -9,8 +9,9 @@ liri.js can take in one of the following commands:
 * spotify-this-song
 * movie-this
 * do-what-it-says
-<br>
+<p>
 If using one of the first three commands, users may add a search term for example:
+<p>
 * concert-this *artist name*
 * spotify-this-song *song name*
 * movie-this *movie name*
