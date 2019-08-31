@@ -3,6 +3,18 @@
 ## Overview
 " LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and Recognition Interface, LIRI is a Language Interpretation and Recognition Interface. LIRI will be a command line node app that takes in parameters and gives you back data."
 
+## Instructions
+liri.js can take in one of the following commands:
+* concert-this
+* spotify-this-song
+* movie-this
+* do-what-it-says
+If using one of the first three commands, users may add a search term for example:
+* concert-this *italic*artist *italic*name
+* spotify-this-song *italic*song *italic*name
+* movie-this *italic*movie *italic*name
+Type do-what-it-says with no search term tp see what happens!
+
 ## Link
 [Link to the Live Site](https://jnieves14.github.io/liri-node-app/)
 
@@ -14,10 +26,10 @@ You can use commands like:
 * do-what-it-says: try it!
 
 Example of what the default 'concert-this' command in Terminal shows
-![Image of Terminal](https://github.com/jnieves14/liri-node-app/blob/master/example.jpg)
+![](liri-preview.gif)
 
 
-## Key Topics
+## Technologies Used
 * Node.js
 * process.argv
 * Client-server model
