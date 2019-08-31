@@ -9,10 +9,11 @@ liri.js can take in one of the following commands:
 * spotify-this-song
 * movie-this
 * do-what-it-says
+<br>
 If using one of the first three commands, users may add a search term for example:
-* concert-this *italic*artist *italic*name
-* spotify-this-song *italic*song *italic*name
-* movie-this *italic*movie *italic*name
+* concert-this *artist name*
+* spotify-this-song *song name*
+* movie-this *movie name*
 Type do-what-it-says with no search term tp see what happens!
 
 ## Link
